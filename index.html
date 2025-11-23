@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +7,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(#cce7ff, #e6f7ff);
+            background: url("refilling.jpg") no-repeat center center fixed;
+            background-size: cover;
             margin: 0;
         }
         header {
-            background-color: #0099cc;
+            background-color: rgba(0,153,204,0.8);
             padding: 20px;
             color: white;
             text-align: center;
@@ -23,9 +25,9 @@
         }
         nav {
             width: 20%;
-            background-color: #f2faff;
+            background-color: rgba(242,250,255,0.7);
             padding: 20px;
-            border-right: 2px solid #b3e0ff;
+            border-right: 2px solid rgba(179,224,255,0.6);
             height: 100vh;
         }
         nav a {
@@ -40,13 +42,17 @@
             padding: 30px;
         }
         .box {
-            background: white;
+            background: rgba(255,255,255,0.3); /* transparent white */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px); /* optional glass effect */
         }
         h2 {
             color: #0077aa;
+        }
+        p {
+            color: #000000;
         }
     </style>
 </head>
