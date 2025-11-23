@@ -4,84 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact – 5S H2O Refilling Water Station</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(#cce7ff, #e6f7ff);
+            background: url("refilling.jpg") no-repeat center center fixed;
+            background-size: cover;
             margin: 0;
+            overflow-x: hidden;
         }
+
         header {
-            background-color: #0099cc;
+            background-color: rgba(0,153,204,0.85);
             padding: 20px;
             color: white;
             text-align: center;
-            font-size: 28px;
+            font-size: 38px;
+            font-family: 'Pacifico', cursive;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            display: flex;
+        }
+
+        nav {
+            width: 20%;
+            background-color: rgba(242,250,255,0.85);
+            padding: 20px;
+            border-right: 2px solid rgba(179,224,255,0.6);
+            height: 100vh;
+            backdrop-filter: blur(3px);
+        }
+
+        nav a {
+            display: block;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #005f80;
             font-weight: bold;
+            transition: 0.3s;
         }
+
+        nav a:hover {
+            color: white;
+            background-color: rgba(0,153,204,0.7);
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+
         .content {
-            padding: 40px;
+            width: 80%;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
         }
+
         .box {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 900px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.75);
+            padding: 30px;
+            border-radius: 20px;
+            width: 70%;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            animation: floatBox 4s infinite ease-in-out;
         }
+
+        @keyframes floatBox {
+            0% { transform: translateY(-10px); }
+            50% { transform: translateY(5px); }
+            100% { transform: translateY(-10px); }
+        }
+
         h2 {
             color: #0077aa;
             text-align: center;
+            font-family: 'Pacifico', cursive;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: left;
-        }
+
         .contact-section {
             margin-top: 20px;
-            background: #f0faff;
+            background: rgba(240,250,255,0.9);
             padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #0099cc;
+            border-radius: 15px;
+            border-left: 6px solid #0099cc;
         }
-        .button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-        a.button {
-            text-decoration: none;
-            background-color: #0099cc;
-            padding: 12px 20px;
-            border-radius: 5px;
-            color: white;
+
+        .contact-section a {
+            color: #1877f2;
             font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
         }
-        a.button:hover {
-            background-color: #0077aa;
+
+        .contact-section a:hover {
+            color: #0d5ec1;
+            text-decoration: underline;
         }
+
     </style>
 </head>
 <body>
 
 <header>Contact Us</header>
 
-<div class="content">
-    <div class="box">
-        <h2>Get in Touch</h2>
-        <p>If you need clean and purified water delivered to your home, business, or establishment, feel free to reach out to us. We are happy to assist you anytime.</p>
+<div class="container">
 
-        <div class="contact-section">
-            <p><strong>Manager:</strong> Jannette Balangue</p>
-            <p><strong>Contact Number:</strong> 0927-648-2178</p>
-            <p><strong>Online Contact:</strong> Jannette Balangue (Manager)</p>
-        </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="background.html">Background</a>
+        <a href="contact.html">Contact</a>
+        <a href="orderform.html">Order Form</a>
+    </nav>
 
-        <div class="button-container">
-            <a href="index.html" class="button">Back to Home</a>
+    <div class="content">
+        <div class="box">
+            <h2>Get in Touch</h2>
+            <p>If you need clean and purified water delivered to your home, business, or establishment, feel free to reach out to us. We are happy to assist you anytime.</p>
+
+            <div class="contact-section">
+                <p><strong>Manager:</strong> Jannette Balangue</p>
+                <p><strong>Contact Number:</strong> 0927-648-2178</p>
+                <p><strong>Online Contact:</strong> 
+                    <a href="https://www.facebook.com/janette.balangue" target="_blank">Jannette Balangue</a>
+                </p>
+            </div>
         </div>
     </div>
+
 </div>
 
 </body>
 </html>
+

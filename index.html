@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5S H2O Refilling Water Station</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,49 +15,85 @@
             background-size: cover;
             margin: 0;
         }
+
         header {
-            background-color: rgba(0,153,204,0.8);
+            background-color: rgba(0,153,204,0.85);
             padding: 20px;
             color: white;
             text-align: center;
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 38px;
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
         }
+
         .container {
             display: flex;
             margin: 0;
         }
+
         nav {
             width: 20%;
-            background-color: rgba(242,250,255,0.7);
+            background-color: rgba(242,250,255,0.85);
             padding: 20px;
             border-right: 2px solid rgba(179,224,255,0.6);
             height: 100vh;
+            backdrop-filter: blur(3px);
         }
+
         nav a {
             display: block;
             margin-bottom: 15px;
             text-decoration: none;
-            color: #006699;
+            color: #005f80;
             font-weight: bold;
+            transition: 0.3s;
         }
+
+        nav a:hover {
+            color: white;
+            background-color: rgba(0,153,204,0.7);
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+
         .content {
             width: 80%;
-            padding: 30px;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
+
         .box {
-            background: rgba(255,255,255,0.3); /* transparent white */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            backdrop-filter: blur(5px); /* optional glass effect */
+            background: rgba(255,255,255,0.75); /* less transparent */
+            padding: 25px;
+            width: 70%;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            transform: translateY(-20px); /* floating effect */
+            transition: 0.3s;
         }
+
+        .box:hover {
+            transform: translateY(-25px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.35);
+        }
+
         h2 {
             color: #0077aa;
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            margin-top: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
+
         p {
-            color: #000000;
+            color: #003b4d;
+            font-size: 17px;
         }
+
     </style>
 </head>
 <body>
@@ -68,7 +108,7 @@
         <a href="orderform.html">Order Form</a>
         <hr>
         <p><strong>Description:</strong></p>
-        <p>Your trusted provider of clean, safe, and high‑quality drinking water. Experience purity in every drop.</p>
+        <p>Your trusted provider of clean, safe, and high-quality drinking water. Experience purity in every drop.</p>
     </nav>
 
     <div class="content">

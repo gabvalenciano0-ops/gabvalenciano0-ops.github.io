@@ -3,82 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background – 5S H2O Refilling Water Station</title>
+    <title>Background - 5S H2O Refilling Water Station</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(#cce7ff, #e6f7ff);
+            background: url("refilling.jpg") no-repeat center center fixed;
+            background-size: cover;
             margin: 0;
+            overflow-x: hidden;
         }
+
+        /* Floating bubbles */
+        .bubble {
+            position: fixed;
+            bottom: -100px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            animation: rise 8s infinite ease-in;
+            box-shadow: 0 0 15px rgba(255,255,255,0.7);
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-120vh) scale(1.3); opacity: 0; }
+        }
+
+        /* Service Badge */
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,153,204,0.9);
+            color: white;
+            font-family: 'Pacifico', cursive;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 3px solid white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+            animation: floatBadge 3s infinite ease-in-out;
+        }
+
+        @keyframes floatBadge {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+
         header {
-            background-color: #0099cc;
+            background-color: rgba(0,153,204,0.85);
             padding: 20px;
             color: white;
             text-align: center;
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 38px;
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            position: relative;
         }
-        .content {
-            padding: 40px;
+
+        .container {
+            display: flex;
+            margin: 0;
         }
-        .box {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 900px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+        nav {
+            width: 20%;
+            background-color: rgba(242,250,255,0.85);
+            padding: 20px;
+            border-right: 2px solid rgba(179,224,255,0.6);
+            height: 100vh;
+            backdrop-filter: blur(3px);
         }
-        h2 {
-            color: #0077aa;
-            text-align: center;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-        .button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-        a.button {
+
+        nav a {
+            display: block;
+            margin-bottom: 15px;
             text-decoration: none;
-            background-color: #0099cc;
-            padding: 12px 20px;
-            border-radius: 5px;
-            color: white;
+            color: #005f80;
             font-weight: bold;
+            transition: 0.3s;
         }
-        a.button:hover {
-            background-color: #0077aa;
+
+        nav a:hover {
+            color: white;
+            background-color: rgba(0,153,204,0.7);
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+
+        .content {
+            width: 80%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .about-box {
+            background: rgba(255,255,255,0.75);
+            padding: 25px;
+            width: 75%;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            text-align: center;
+            transform: translateY(-15px);
+            transition: 0.3s;
+            animation: waterMove 4s infinite ease-in-out;
+        }
+
+        @keyframes waterMove {
+            0% { transform: translateY(-15px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(-15px); }
+        }
+
+        .about-box:hover {
+            box-shadow: 0 20px 35px rgba(0,0,0,0.35);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            width: 75%;
+        }
+
+        .image-card {
+            background: rgba(255,255,255,0.7);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            transition: 0.3s;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .image-card p {
+            padding: 10px;
+            font-size: 16px;
+            color: #003b4d;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Pacifico', cursive;
+            color: #0077aa;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body>
 
-<header>Background of 5S H2O Refilling Station</header>
+<header>Background</header>
 
-<div class="content">
-    <div class="box">
-        <h2>Our Story</h2>
-        <p>
-            <strong>5S Water Refilling Station</strong> was established 13 years ago through a partnership between two relatives.
-            After some time, one partner withdrew due to personal reasons, leaving full ownership to the uncle of the
-            current manager. With dedication, proper management, and a strong commitment to quality, the business
-            gradually grew and earned the trust and loyalty of its customers.
-        </p>
-        <p>
-            Today, the station continues to provide accessible, safe, and affordable purified water to the community.
-            With a vision for expansion and an unwavering commitment to excellent customer service, 5S aims to reach
-            more households and businesses while maintaining the purity and reliability it is known for.
-        </p>
+<div class="badge">13 Years of Service</div>
 
-        <div class="button-container">
-            <a href="index.html" class="button">Back to Home</a>
+<!-- Floating bubbles -->
+<script>
+    for(let i=0;i<15;i++){
+        let bubble=document.createElement("div");
+        let size=Math.random()*60+20;
+        bubble.classList.add("bubble");
+        bubble.style.width=size+"px";
+        bubble.style.height=size+"px";
+        bubble.style.left=Math.random()*100+"%";
+        bubble.style.animationDuration=(Math.random()*5+6)+"s";
+        document.body.appendChild(bubble);
+    }
+</script>
+
+<div class="container">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="background.html">Background</a>
+        <a href="contact.html">Contact</a>
+        <a href="orderform.html">Order Form</a>
+    </nav>
+
+    <div class="content">
+
+        <div class="about-box">
+            <h2>Our Story</h2>
+
+            <p>5S Water Refilling Station was established 13 years ago through a partnership between two relatives. After some time, one partner withdrew due to personal reasons, leaving full ownership to the uncle of the current manager.</p>
+
+            <p>With dedication, proper management, and a strong commitment to quality, the business gradually grew and earned the trust and loyalty of its customers.</p>
+
+            <p>Today, the station continues to provide accessible, safe, and affordable purified water to the community. With a vision for expansion and an unwavering commitment to excellent customer service, 5S aims to reach more households and businesses while maintaining the purity and reliability it is known for.</p>
+
+            <p>At 5S, every drop reflects our promise—clean, refreshing, and delivered with genuine care.</p>
         </div>
+
+        <div class="image-grid">
+
+            <div class="image-card">
+                <img src="station.jpg" alt="Water Station">
+                <p>Modern water refilling station with advanced filtration.</p>
+            </div>
+
+            <div class="image-card">
+                <img src="water.jpg" alt="Clean Water">
+                <p>Experience refreshing and purified drinking water.</p>
+            </div>
+
+        </div>
+
     </div>
 </div>
 
 </body>
 </html>
+
